@@ -6,7 +6,7 @@ from collections import defaultdict
 from queue import deque
 import random
 import itertools
-
+#fonte: UV in scale: https://github.com/aconz2/blender-addon-origamify
 TOL = 1e-6
 # ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
 class SpanningTreeMissingFaces(Exception):
