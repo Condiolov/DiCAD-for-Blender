@@ -3,12 +3,15 @@ import bmesh
 from mathutils import Matrix, Vector
 import bpy, os, importlib
 import webbrowser
-import uvScale, alingFace
+
+from . import uvScale, alingFace
 importlib.reload(uvScale)
 importlib.reload(alingFace)
 
-from uvScale import *
-from alingFace import *
+
+
+from . uvScale import *
+from . alingFace import *
 
 
 bl_info = {
@@ -18,10 +21,10 @@ bl_info = {
         "version": (1, 0, 0),
         "blender": (3, 4, 1),
         "location": "View3D",
-        "warning": "Caso encontre algum erro e saiba solucionar, reporte!!",
+        "warning": "Caso encontre algum erro reporte!!",
         "doc_url": "https://github.com/Condiolov/DiCAD",
         "tracker_url": "https://github.com/Condiolov/DiCAD/issues",
-        "support": "OFFICIAL",
+        "support": "TESTING",
         "category": "Generic"}
 
 escala=0.1
