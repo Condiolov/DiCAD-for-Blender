@@ -149,7 +149,8 @@ class DiCAD_TOOLS(bpy.types.Operator):
         if camera == "":
             camera = bpy.data.cameras.new(name='Camera_A4')
             camera_object = bpy.data.objects.new('Camera_A4', camera)
-            bpy.data.collections['Rascunho'].objects.link(camera_object)
+            # bpy.data.collections['Rascunho'].objects.link(camera_object)
+            bpy.context.scene.collection.objects.link(camera_object)
             bpy.data.cameras[camera.name].type="ORTHO"
             bpy.data.cameras[camera.name].ortho_scale = escala*296.9999694824219
 
@@ -181,7 +182,9 @@ class DiCAD_TOOLS(bpy.types.Operator):
                 c.hide_render=False
             else:
                 c.hide_render=True
-        #bpy.ops.view3d.view_selected(use_all_regions=False)
+
+        #   bpy.ops.view3d.view_selected(use_all_regions=False)
+
 
 ####-----------------------------------------------------------------------------------------
     def config_ferramentas(self, context):
@@ -328,7 +331,7 @@ class DiCAD_MENU(bpy.types.Panel):
         layout.label(text="GERAR Imagem:")
         col = layout.column(align=True)
         row = col.row(align=True)
-        row.operator("dicad.menu", text="GERAR IMAGEM", icon="MOD_MESHDEFORM").action = "render"
+        row.operator("dicad.menu", text="EXPORT IMAGE", icon="MOD_MESHDEFORM").action = "render"
         row.operator("dicad.menu", text="", icon="FUND").action = "donate"
 
 
